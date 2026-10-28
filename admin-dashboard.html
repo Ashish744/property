@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin dashboard | Property Listings</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;600;700&display=swap"
+    />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body class="dash admin">
+    <!-- Top bar: logo and profile only -->
+    <header class="dtop">
+      <div class="dl">
+        <button
+          class="dmenu"
+          id="dm"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="side"
+        >
+          Menu
+        </button>
+        <a href="index.html"><img src="assets/logo/logo.webp" alt="Property Listings, home" /></a>
+      </div>
+      <div class="prof">
+        <button id="pbtn" aria-expanded="false" aria-controls="pmenu">
+          <span class="av">AA</span>
+          Agency Admin
+        </button>
+        <div id="pmenu" hidden><a href="login.html">Log out</a></div>
+      </div>
+    </header>
+    <div class="dbody">
+      <!-- Left menu -->
+      <aside id="side">
+        <nav aria-label="Dashboard menu">
+          <a href="#overview" data-view="overview">Overview</a>
+          <a href="#listings" data-view="listings">Listings</a>
+          <a href="#agents" data-view="agents">Agents</a>
+          <a href="#clients" data-view="clients">Clients</a>
+          <a href="#viewings" data-view="viewings">Viewings</a>
+          <a href="#messages" data-view="messages">Messages</a>
+          <a href="#reports" data-view="reports">Reports</a>
+          <a href="#settings" data-view="settings">Settings</a>
+        </nav>
+        <p class="side-note">Demo data only</p>
+      </aside>
+      <!-- Page content: one view is shown at a time -->
+      <main>
+        <!-- ===== View: Overview ===== -->
+        <section class="view" id="v-overview">
+          <h2 tabindex="-1">Overview</h2>
+          <p class="lead">Good morning. Here is how the agency is doing today.</p>
+          <div class="stat-grid">
+            <div class="stat">
+              <span>Active listings</span>
+              <b>248</b>
+              <small>12 new this week</small>
+            </div>
+            <div class="stat">
+              <span>Agents on duty</span>
+              <b>18</b>
+              <small>of 32 total</small>
+            </div>
+            <div class="stat">
+              <span>Viewings today</span>
+              <b>14</b>
+              <small>3 pending</small>
+            </div>
+            <div class="stat">
+              <span>Avg. days on market</span>
+              <b>21</b>
+              <small>3 days faster</small>
+            </div>
+          </div>
+          <div class="two">
+            <div class="panel">
+              <h3>Today’s viewings</h3>
+              <ul class="feed">
+                <li>
+                  <b>09:30</b>
+                  12 Oak Lane with Priya Nair
+                </li>
+                <li>
+                  <b>10:45</b>
+                  Harbour View Apt 4B with Sam Okoye
+                </li>
+                <li>
+                  <b>12:00</b>
+                  The Gables with Leo Martins
+                </li>
+                <li>
+                  <b>14:30</b>
+                  Willow Court with Grace Lim
+                </li>
+                <li>
+                  <b>16:00</b>
+                  Palm Court 2A with Meera Shah
+                </li>
+              </ul>
+            </div>
+            <div class="panel">
+              <h3>Needs attention</h3>
+              <ul class="feed">
+                <li>3 listings need new photos</li>
+                <li>2 offers are waiting for a reply</li>
+                <li>4 new leads are unassigned</li>
+                <li>1 listing expires this week</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- ===== View: Listings ===== -->
+        <section class="view" id="v-listings" hidden>
+          <h2 tabindex="-1">Listings</h2>
+          <div class="cards" id="svcs">
+            <div class="panel">
+              <h3>12 Oak Lane, Austin</h3>
+              <p>4 bd house, $785,000</p>
+              <button class="btn btn-ghost sm sw" aria-pressed="true">Active</button>
+            </div>
+            <div class="panel">
+              <h3>Harbour View Apt 4B, Miami</h3>
+              <p>2 bd apartment, $4,800/mo</p>
+              <button class="btn btn-ghost sm sw" aria-pressed="true">Active</button>
+            </div>
+            <div class="panel">
+              <h3>The Gables, Denver</h3>
+              <p>5 bd villa, $1,250,000</p>
+              <button class="btn btn-ghost sm sw" aria-pressed="true">Active</button>
+            </div>
+            <div class="panel">
+              <h3>Willow Court, Chicago</h3>
+              <p>3 bd townhouse, $540,000</p>
+              <button class="btn btn-ghost sm sw" aria-pressed="true">Active</button>
+            </div>
+          </div>
+          <form class="panel" id="addsvc" novalidate style="margin-top: 1rem">
+            <h3>Add a listing</h3>
+            <div class="field">
+              <label for="sn">Listing title</label>
+              <input id="sn" />
+              <p class="err" id="sn-err" role="alert"></p>
+            </div>
+            <button class="btn btn-primary sm" type="submit">Add listing</button>
+          </form>
+        </section>
+        <!-- ===== View: Agents ===== -->
+        <section class="view" id="v-agents" hidden>
+          <h2 tabindex="-1">Agents</h2>
+          <div class="fchips" data-target=".cg" role="group" aria-label="Filter agents">
+            <button class="fbtn" data-f="all" aria-pressed="true">All</button>
+            <button class="fbtn" data-f="avail" aria-pressed="false">Available</button>
+            <button class="fbtn" data-f="shift" aria-pressed="false">On a viewing</button>
+            <button class="fbtn" data-f="off" aria-pressed="false">Off today</button>
+          </div>
+          <div class="cards">
+            <div class="panel cg" data-s="avail">
+              <span class="av">P</span>
+              <h3>Priya Nair</h3>
+              <p>Senior agent</p>
+              <span class="badge b-ok">Available</span>
+            </div>
+            <div class="panel cg" data-s="shift">
+              <span class="av">S</span>
+              <h3>Sam Okoye</h3>
+              <p>Rentals specialist</p>
+              <span class="badge b-wait">On a viewing</span>
+            </div>
+            <div class="panel cg" data-s="off">
+              <span class="av">L</span>
+              <h3>Leo Martins</h3>
+              <p>Luxury homes</p>
+              <span class="badge b-x">Off today</span>
+            </div>
+            <div class="panel cg" data-s="shift">
+              <span class="av">M</span>
+              <h3>Meera Shah</h3>
+              <p>Valuations lead</p>
+              <span class="badge b-wait">On a viewing</span>
+            </div>
+            <div class="panel cg" data-s="avail">
+              <span class="av">G</span>
+              <h3>Grace Lim</h3>
+              <p>New homes</p>
+              <span class="badge b-ok">Available</span>
+            </div>
+            <div class="panel cg" data-s="avail">
+              <span class="av">D</span>
+              <h3>Daniel Reyes</h3>
+              <p>Investment advisor</p>
+              <span class="badge b-ok">Available</span>
+            </div>
+          </div>
+        </section>
+        <!-- ===== View: Clients ===== -->
+        <section class="view" id="v-clients" hidden>
+          <h2 tabindex="-1">Clients</h2>
+          <div class="tools">
+            <label class="sr" for="cq">Search clients</label>
+            <input id="cq" type="search" data-search="clients" placeholder="Search clients" />
+          </div>
+          <div class="panel tbl">
+            <table id="clients">
+              <thead>
+                <tr>
+                  <th>Client</th>
+                  <th>Budget</th>
+                  <th>Looking for</th>
+                  <th>Agent</th>
+                  <th>Lead</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Rahul Kumar</td>
+                  <td>$600k</td>
+                  <td>3 bd house, Austin</td>
+                  <td>Priya Nair</td>
+                  <td><span class="badge b-x">Hot</span></td>
+                </tr>
+                <tr>
+                  <td>Jenna Lopez</td>
+                  <td>$3.5k/mo</td>
+                  <td>2 bd apartment</td>
+                  <td>Sam Okoye</td>
+                  <td><span class="badge b-wait">Warm</span></td>
+                </tr>
+                <tr>
+                  <td>Marco Pinto</td>
+                  <td>$1.1m</td>
+                  <td>Villa, Miami</td>
+                  <td>Leo Martins</td>
+                  <td><span class="badge b-x">Hot</span></td>
+                </tr>
+                <tr>
+                  <td>Aisha Khan</td>
+                  <td>$450k</td>
+                  <td>Condo, Chicago</td>
+                  <td>Grace Lim</td>
+                  <td><span class="badge b-ok">New</span></td>
+                </tr>
+                <tr>
+                  <td>Tom Becker</td>
+                  <td>$900k</td>
+                  <td>Family home, Denver</td>
+                  <td>Priya Nair</td>
+                  <td><span class="badge b-wait">Warm</span></td>
+                </tr>
+                <tr>
+                  <td>Lena Fischer</td>
+                  <td>$2.8k/mo</td>
+                  <td>Studio</td>
+                  <td>Sam Okoye</td>
+                  <td><span class="badge b-ok">New</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <!-- ===== View: Viewings ===== -->
+        <section class="view" id="v-viewings" hidden>
+          <h2 tabindex="-1">Viewings</h2>
+          <div class="tools">
+            <label class="sr" for="aq">Search viewings</label>
+            <input
+              id="aq"
+              type="search"
+              data-search="appt"
+              placeholder="Search client, property or agent"
+            />
+            <label class="sr" for="af">Filter by status</label>
+            <select id="af" data-sel="appt">
+              <option value="">All statuses</option>
+              <option value="ok">Confirmed</option>
+              <option value="wait">Pending</option>
+              <option value="x">Cancelled</option>
+            </select>
+          </div>
+          <div class="panel tbl">
+            <table id="appt">
+              <thead>
+                <tr>
+                  <th>Client</th>
+                  <th>Property</th>
+                  <th>Agent</th>
+                  <th>Time</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-s="ok">
+                  <td>Rahul Kumar</td>
+                  <td>12 Oak Lane</td>
+                  <td>Priya Nair</td>
+                  <td>09:30</td>
+                  <td><span class="badge b-ok">Confirmed</span></td>
+                  <td><button class="btn btn-ghost sm tog">Change status</button></td>
+                </tr>
+                <tr data-s="wait">
+                  <td>Jenna Lopez</td>
+                  <td>Harbour View 4B</td>
+                  <td>Sam Okoye</td>
+                  <td>10:45</td>
+                  <td><span class="badge b-wait">Pending</span></td>
+                  <td><button class="btn btn-ghost sm tog">Change status</button></td>
+                </tr>
+                <tr data-s="ok">
+                  <td>Marco Pinto</td>
+                  <td>The Gables</td>
+                  <td>Leo Martins</td>
+                  <td>12:00</td>
+                  <td><span class="badge b-ok">Confirmed</span></td>
+                  <td><button class="btn btn-ghost sm tog">Change status</button></td>
+                </tr>
+                <tr data-s="x">
+                  <td>Aisha Khan</td>
+                  <td>Willow Court</td>
+                  <td>Grace Lim</td>
+                  <td>14:30</td>
+                  <td><span class="badge b-x">Cancelled</span></td>
+                  <td><button class="btn btn-ghost sm tog">Change status</button></td>
+                </tr>
+                <tr data-s="wait">
+                  <td>Tom Becker</td>
+                  <td>Palm Court 2A</td>
+                  <td>Meera Shah</td>
+                  <td>16:00</td>
+                  <td><span class="badge b-wait">Pending</span></td>
+                  <td><button class="btn btn-ghost sm tog">Change status</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <!-- ===== View: Messages ===== -->
+        <section class="view" id="v-messages" hidden>
+          <h2 tabindex="-1">Messages</h2>
+          <div class="mail">
+            <ul class="inbox">
+              <li>
+                <button
+                  type="button"
+                  class="unread"
+                  data-from="Sarah W."
+                  data-body="Can I book a second viewing of 12 Oak Lane this weekend? My partner could not attend."
+                >
+                  <b>Sarah W.</b>
+                  <span>Can I book a second viewing of 12 …</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="unread"
+                  data-from="Dr. Mehta"
+                  data-body="Please send the survey report for Willow Court before Friday. We are ready to make an offer."
+                >
+                  <b>Dr. Mehta</b>
+                  <span>Please send the survey report for …</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class=""
+                  data-from="Tom B."
+                  data-body="Thank you for the smooth sale. We handed over the keys this morning!"
+                >
+                  <b>Tom B.</b>
+                  <span>Thank you for the smooth sale. We …</span>
+                </button>
+              </li>
+            </ul>
+            <div class="panel" id="mview">
+              <p id="mhint">Select a message to read it.</p>
+              <div id="mopen" hidden>
+                <h3 id="mfrom"></h3>
+                <p id="mbody"></p>
+                <form id="reply" novalidate>
+                  <div class="field">
+                    <label for="rt">Reply</label>
+                    <textarea id="rt" rows="3"></textarea>
+                  </div>
+                  <button class="btn btn-primary sm" type="submit">Send reply</button>
+                  <p class="form-ok" id="rok" role="status" hidden>Reply sent (demo).</p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ===== View: Reports ===== -->
+        <section class="view" id="v-reports" hidden>
+          <h2 tabindex="-1">Reports</h2>
+          <div class="two">
+            <div class="panel">
+              <h3>Viewings this week</h3>
+              <svg
+                class="bars"
+                data-v="14,19,11,24,17,22,9"
+                data-l="Mon,Tue,Wed,Thu,Fri,Sat,Sun"
+                viewBox="0 0 430 185"
+                role="img"
+                aria-label="Bar chart of viewings per weekday"
+              ></svg>
+            </div>
+            <div class="panel">
+              <h3>Listings by type</h3>
+              <p>Houses (42%)</p>
+              <div
+                class="bar"
+                role="progressbar"
+                aria-label="Houses"
+                aria-valuenow="42"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <i data-p="42"></i>
+              </div>
+              <p>Apartments (31%)</p>
+              <div
+                class="bar"
+                role="progressbar"
+                aria-label="Apartments"
+                aria-valuenow="31"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <i data-p="31"></i>
+              </div>
+              <p>Villas (15%)</p>
+              <div
+                class="bar"
+                role="progressbar"
+                aria-label="Villas"
+                aria-valuenow="15"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <i data-p="15"></i>
+              </div>
+              <p>Land (12%)</p>
+              <div
+                class="bar"
+                role="progressbar"
+                aria-label="Land"
+                aria-valuenow="12"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <i data-p="12"></i>
+              </div>
+              <button class="btn btn-primary sm" id="exp">Download viewings CSV</button>
+            </div>
+          </div>
+        </section>
+        <!-- ===== View: Settings ===== -->
+        <section class="view" id="v-settings" hidden>
+          <h2 tabindex="-1">Settings</h2>
+          <form class="panel" data-validate data-ok="Profile saved (demo only)." novalidate>
+            <div class="row2">
+              <div class="field">
+                <label for="fn">First name</label>
+                <input id="fn" value="Agency" data-v="name" data-label="First name" />
+                <p class="err" id="fn-err" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="ln">Last name</label>
+                <input id="ln" value="Admin" data-v="name" data-label="Last name" />
+                <p class="err" id="ln-err" role="alert"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="em">Email</label>
+              <input id="em" value="admin@propertylistings.example" type="email" data-v="email" />
+              <p class="err" id="em-err" role="alert"></p>
+            </div>
+            <h3>Notifications</h3>
+            <p>
+              Alerts for new leads
+              <button type="button" class="btn btn-ghost sm sw" aria-pressed="true">On</button>
+            </p>
+            <p>
+              Weekly market report
+              <button type="button" class="btn btn-ghost sm sw" aria-pressed="false">Off</button>
+            </p>
+            <button class="btn btn-primary" type="submit">Save changes</button>
+            <p class="form-ok" role="status" hidden></p>
+          </form>
+        </section>
+      </main>
+    </div>
+    <!-- Scripts -->
+    <script src="js/validation.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

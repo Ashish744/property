@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog | Property Listings</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;600;700&display=swap"
+    />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  <body>
+    <!-- Navbar: built by js/main.js -->
+    <header id="site-nav"></header>
+    <!-- Page content -->
+    <main class="wrap">
+      <!-- ===== Section: Property advice, written plainly ===== -->
+      <section class="phero pv-blog">
+        <div class="ptxt">
+          <p class="eyebrow">Market guides</p>
+          <h1 data-split>Property advice, written plainly</h1>
+          <p class="lead">Guides for buyers, renters, sellers and investors.</p>
+          <div class="btns"></div>
+        </div>
+        <div class="pvis">
+          <article class="card pcard3d">
+            <div class="ph">
+              <img
+                src="assets/images/webp/photo-1777115471024-b0a140087e60.webp"
+                alt="A modern house with a car parked outside"
+                data-fallback="assets/images/webp/placeholder.webp"
+              />
+            </div>
+            <span class="tag">Featured</span>
+            <h3>How to read a property listing like a pro</h3>
+            <p>6 minute read</p>
+          </article>
+          <div class="topics">
+            <span>Buying</span>
+            <span>Renting</span>
+            <span>Selling</span>
+            <span>Investing</span>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Section: Latest guides ===== -->
+      <section>
+        <h2 class="reveal">Latest guides</h2>
+        <div class="filters" role="group" aria-label="Filter listings">
+          <button class="fbtn" data-f="all" aria-pressed="true">All</button>
+          <button class="fbtn" data-f="Buying" aria-pressed="false">Buying</button>
+          <button class="fbtn" data-f="Renting" aria-pressed="false">Renting</button>
+          <button class="fbtn" data-f="Selling" aria-pressed="false">Selling</button>
+          <button class="fbtn" data-f="Investing" aria-pressed="false">Investing</button>
+        </div>
+        <article class="card arow reveal" data-cat="Buying">
+          <div class="ph">
+            <img
+              src="assets/images/webp/photo-1568605114967-8130f3a36994.webp"
+              alt="A brown and black wooden house"
+              loading="lazy"
+              data-fallback="assets/images/webp/placeholder.webp"
+            />
+          </div>
+          <div>
+            <span class="tag">Buying</span>
+            <h3>First-time buyer’s guide</h3>
+            <p>Budgets, deposits and the mistakes to avoid.</p>
+            <button class="link-btn" data-more="m0" aria-expanded="false">Read the guide</button>
+            <p class="more" id="m0" hidden>
+              Set a realistic budget, get pre-approved, and keep a cash buffer for moving costs and
+              repairs.
+            </p>
+          </div>
+        </article>
+        <article class="card arow reveal" data-cat="Renting">
+          <div class="ph">
+            <img
+              src="assets/images/webp/photo-1785108582166-933ba80037fe.webp"
+              alt="White hydrangeas blooming in front of a house"
+              loading="lazy"
+              data-fallback="assets/images/webp/placeholder.webp"
+            />
+          </div>
+          <div>
+            <span class="tag">Renting</span>
+            <h3>Questions to ask before you rent</h3>
+            <p>Protect your deposit and your peace of mind.</p>
+            <button class="link-btn" data-more="m1" aria-expanded="false">Read the guide</button>
+            <p class="more" id="m1" hidden>
+              Ask about the deposit, notice period, included bills, and who handles repairs. Get
+              everything in writing.
+            </p>
+          </div>
+        </article>
+        <article class="card arow reveal" data-cat="Investing">
+          <div class="ph">
+            <img
+              src="assets/images/webp/photo-1560518883-ce09059eeffa.webp"
+              alt="A miniature house model on a wooden table"
+              loading="lazy"
+              data-fallback="assets/images/webp/placeholder.webp"
+            />
+          </div>
+          <div>
+            <span class="tag">Investing</span>
+            <h3>Is buy-to-let still worth it?</h3>
+            <p>The numbers every landlord should check first.</p>
+            <button class="link-btn" data-more="m2" aria-expanded="false">Read the guide</button>
+            <p class="more" id="m2" hidden>
+              Compare rental yield with interest costs, allow for empty months, and budget for
+              maintenance.
+            </p>
+          </div>
+        </article>
+        <article class="card arow reveal" data-cat="Selling">
+          <div class="ph">
+            <img
+              src="assets/images/webp/photo-1598228723793-52759bba239c.webp"
+              alt="A brown and white house near green trees"
+              loading="lazy"
+              data-fallback="assets/images/webp/placeholder.webp"
+            />
+          </div>
+          <div>
+            <span class="tag">Selling</span>
+            <h3>Stage your home to sell faster</h3>
+            <p>Simple changes that lift buyer interest.</p>
+            <button class="link-btn" data-more="m3" aria-expanded="false">Read the guide</button>
+            <p class="more" id="m3" hidden>
+              Declutter, add light, fix small repairs, and boost kerb appeal before the first
+              photographs.
+            </p>
+          </div>
+        </article>
+      </section>
+      <!-- ===== Section: Viewing checklist ===== -->
+      <section>
+        <h2 class="reveal">Viewing checklist</h2>
+        <div class="card check reveal">
+          <div
+            class="meter"
+            role="progressbar"
+            aria-label="Checklist progress"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+          >
+            <i></i>
+          </div>
+          <p class="cnt" aria-live="polite"></p>
+          <label>
+            <input type="checkbox" />
+            Check water pressure and taps
+          </label>
+          <label>
+            <input type="checkbox" />
+            Open every window and door
+          </label>
+          <label>
+            <input type="checkbox" />
+            Look for damp, cracks or mould
+          </label>
+          <label>
+            <input type="checkbox" />
+            Test the lighting and sockets
+          </label>
+          <label>
+            <input type="checkbox" />
+            Ask about heating and energy costs
+          </label>
+          <label>
+            <input type="checkbox" />
+            Walk the street at a different time of day
+          </label>
+        </div>
+      </section>
+      <!-- ===== Section: New listings in your inbox ===== -->
+      <section>
+        <div class="news card reveal">
+          <div>
+            <h2>New listings in your inbox</h2>
+            <p>One short email a week. No spam.</p>
+          </div>
+          <form
+            data-validate
+            data-ok="Thanks! This is a frontend demo, so nothing was sent."
+            novalidate
+          >
+            <div class="field">
+              <label for="nl">Email</label>
+              <input id="nl" type="email" required data-v="email" autocomplete="email" />
+              <p class="err" id="nl-err" role="alert"></p>
+            </div>
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+            <p class="form-ok" role="status" hidden></p>
+          </form>
+        </div>
+      </section>
+      <div class="marquee" aria-hidden="true">
+        <div class="track">
+          <span>Check the roof</span>
+          <span>Compare recent sales</span>
+          <span>Ask about fees</span>
+          <span>Visit twice</span>
+          <span>Read the contract</span>
+        </div>
+      </div>
+    </main>
+    <!-- Footer: built by js/main.js -->
+    <footer id="site-foot"></footer>
+    <!-- Scripts: libraries first, then site code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/validation.js"></script>
+  </body>
+</html>

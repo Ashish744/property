@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Public dashboard | Property Listings</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;600;700&display=swap"
+    />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body class="dash public">
+    <!-- Top bar: logo and profile only -->
+    <header class="dtop">
+      <div class="dl">
+        <button
+          class="dmenu"
+          id="dm"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="side"
+        >
+          Menu
+        </button>
+        <a href="index.html"><img src="assets/logo/logo.webp" alt="Property Listings, home" /></a>
+      </div>
+      <div class="prof">
+        <button id="pbtn" aria-expanded="false" aria-controls="pmenu">
+          <span class="av">AM</span>
+          Alex Morgan
+        </button>
+        <div id="pmenu" hidden><a href="login.html">Log out</a></div>
+      </div>
+    </header>
+    <div class="dbody">
+      <!-- Left menu -->
+      <aside id="side">
+        <nav aria-label="Dashboard menu">
+          <a href="#overview" data-view="overview">Overview</a>
+          <a href="#saved" data-view="saved">Saved homes</a>
+          <a href="#visits" data-view="visits">Viewings</a>
+          <a href="#agent" data-view="agent">My agent</a>
+          <a href="#journey" data-view="journey">Buying journey</a>
+          <a href="#notes" data-view="notes">Notifications</a>
+          <a href="#help" data-view="help">Help and support</a>
+        </nav>
+        <p class="side-note">Demo data only</p>
+      </aside>
+      <!-- Page content: one view is shown at a time -->
+      <main>
+        <!-- ===== View: Overview ===== -->
+        <section class="view" id="v-overview">
+          <h2 tabindex="-1">Overview</h2>
+          <p class="lead">Welcome back, Alex. You have a viewing on Saturday at 11:00 am.</p>
+          <div class="panel hero-card">
+            <span class="tag">Next viewing</span>
+            <h3>12 Oak Lane, Austin</h3>
+            <p>
+              Saturday, 11:00 am with Priya Nair. Bring your questions about the garden and the
+              school catchment.
+            </p>
+            <a class="btn btn-primary sm" href="#visits">See viewings</a>
+          </div>
+          <div class="stat-grid">
+            <div class="stat">
+              <span>Saved homes</span>
+              <b>4</b>
+            </div>
+            <div class="stat">
+              <span>Viewings booked</span>
+              <b>3</b>
+            </div>
+            <div class="stat">
+              <span>New matches</span>
+              <b>5</b>
+            </div>
+          </div>
+          <div class="panel" style="margin-top: 1rem">
+            <h3>Market tip</h3>
+            <p>
+              Homes priced within 5% of the valuation tend to sell fastest. Ask Priya how 12 Oak
+              Lane compares.
+            </p>
+          </div>
+        </section>
+        <!-- ===== View: Saved homes ===== -->
+        <section class="view" id="v-saved" hidden>
+          <h2 tabindex="-1">Saved homes</h2>
+          <div class="fchips" data-target=".cg" role="group" aria-label="Filter saved homes">
+            <button class="fbtn" data-f="all" aria-pressed="true">All</button>
+            <button class="fbtn" data-f="buy" aria-pressed="false">To buy</button>
+            <button class="fbtn" data-f="rent" aria-pressed="false">To rent</button>
+          </div>
+          <div class="cards">
+            <div class="panel cg" data-s="buy">
+              <span class="badge b-ok">For sale</span>
+              <h3 style="margin-top: 0.5rem">12 Oak Lane, Austin</h3>
+              <p>
+                <strong>$785,000</strong>
+                <br />
+                4 bd · 3 ba
+              </p>
+              <button class="btn btn-ghost sm" data-remove>Remove</button>
+            </div>
+            <div class="panel cg" data-s="rent">
+              <span class="badge b-wait">For rent</span>
+              <h3 style="margin-top: 0.5rem">Harbour View 4B, Miami</h3>
+              <p>
+                <strong>$4,800/mo</strong>
+                <br />
+                2 bd · 2 ba
+              </p>
+              <button class="btn btn-ghost sm" data-remove>Remove</button>
+            </div>
+            <div class="panel cg" data-s="buy">
+              <span class="badge b-ok">For sale</span>
+              <h3 style="margin-top: 0.5rem">The Gables, Denver</h3>
+              <p>
+                <strong>$1,250,000</strong>
+                <br />
+                5 bd · 4 ba
+              </p>
+              <button class="btn btn-ghost sm" data-remove>Remove</button>
+            </div>
+            <div class="panel cg" data-s="buy">
+              <span class="badge b-ok">For sale</span>
+              <h3 style="margin-top: 0.5rem">Willow Court, Chicago</h3>
+              <p>
+                <strong>$540,000</strong>
+                <br />
+                3 bd · 2 ba
+              </p>
+              <button class="btn btn-ghost sm" data-remove>Remove</button>
+            </div>
+          </div>
+        </section>
+        <!-- ===== View: Viewings ===== -->
+        <section class="view" id="v-visits" hidden>
+          <h2 tabindex="-1">Viewings</h2>
+          <div class="two">
+            <div class="panel">
+              <h3>Upcoming</h3>
+              <ul class="feed" id="upcoming">
+                <li>Saturday, 11:00 am: 12 Oak Lane with Priya</li>
+                <li>Next Tuesday, 5:30 pm: Harbour View 4B with Sam</li>
+              </ul>
+              <h3 style="margin-top: 1.2rem">Past viewings</h3>
+              <ul class="feed">
+                <li>Last Sunday: Willow Court, completed</li>
+                <li>Two weeks ago: The Gables, completed</li>
+              </ul>
+            </div>
+            <form class="panel" id="req" novalidate>
+              <h3>Book a viewing</h3>
+              <div class="field">
+                <label for="svc">Property</label>
+                <select id="svc">
+                  <option>12 Oak Lane, Austin</option>
+                  <option>Harbour View 4B, Miami</option>
+                  <option>The Gables, Denver</option>
+                  <option>Willow Court, Chicago</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="dt">Preferred date</label>
+                <input id="dt" type="date" />
+                <p class="err" id="dt-err" role="alert"></p>
+              </div>
+              <button class="btn btn-primary" type="submit">Request viewing</button>
+              <p class="form-ok" id="req-ok" role="status" hidden></p>
+            </form>
+          </div>
+        </section>
+        <!-- ===== View: My agent ===== -->
+        <section class="view" id="v-agent" hidden>
+          <h2 tabindex="-1">My agent</h2>
+          <div class="two">
+            <div class="panel profile">
+              <span class="av big">PN</span>
+              <h3>Priya Nair</h3>
+              <p><strong>Senior agent</strong></p>
+              <p>
+                Your agent for 3 months. Knows Austin’s neighbourhoods, schools and market inside
+                out.
+              </p>
+              <ul class="feed">
+                <li>Languages: English, Hindi</li>
+                <li>Specialises in family homes</li>
+                <li>Usually available Mon to Sat</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <h3>Rate Priya’s service</h3>
+              <div class="stars" role="group" aria-label="Rating">
+                <button type="button" aria-label="1 star" aria-pressed="false">★</button>
+                <button type="button" aria-label="2 stars" aria-pressed="false">★</button>
+                <button type="button" aria-label="3 stars" aria-pressed="false">★</button>
+                <button type="button" aria-label="4 stars" aria-pressed="false">★</button>
+                <button type="button" aria-label="5 stars" aria-pressed="false">★</button>
+              </div>
+              <p id="rate-out" role="status"></p>
+              <form id="note" novalidate>
+                <div class="field">
+                  <label for="nt">Send Priya a note</label>
+                  <textarea id="nt" rows="3"></textarea>
+                </div>
+                <button class="btn btn-primary sm" type="submit">Send note</button>
+                <p class="form-ok" id="nok" role="status" hidden>Note sent (demo).</p>
+              </form>
+            </div>
+          </div>
+        </section>
+        <!-- ===== View: Buying journey ===== -->
+        <section class="view" id="v-journey" hidden>
+          <h2 tabindex="-1">Buying journey</h2>
+          <div class="panel pcheck">
+            <h3>My buying checklist</h3>
+            <div
+              class="bar"
+              role="progressbar"
+              aria-label="Checklist progress"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            >
+              <i data-p="0"></i>
+            </div>
+            <p class="cnt" aria-live="polite"></p>
+            <label class="gl">
+              <input type="checkbox" checked />
+              Set a budget and deposit target
+            </label>
+            <label class="gl">
+              <input type="checkbox" checked />
+              Get a mortgage pre-approval
+            </label>
+            <label class="gl">
+              <input type="checkbox" checked />
+              Shortlist five homes
+            </label>
+            <label class="gl">
+              <input type="checkbox" />
+              View the shortlisted homes
+            </label>
+            <label class="gl">
+              <input type="checkbox" />
+              Choose a favourite and make an offer
+            </label>
+            <label class="gl">
+              <input type="checkbox" />
+              Arrange a survey and inspection
+            </label>
+            <label class="gl">
+              <input type="checkbox" />
+              Finalise legal paperwork
+            </label>
+            <label class="gl">
+              <input type="checkbox" />
+              Collect your keys
+            </label>
+          </div>
+          <div class="two">
+            <div class="panel">
+              <h3>Area price index</h3>
+              <svg
+                class="line"
+                data-v="5,5,6,6,7,8"
+                viewBox="0 0 420 170"
+                role="img"
+                aria-label="Line chart of the local price index over six months"
+              ></svg>
+            </div>
+            <div class="panel">
+              <h3>Search progress</h3>
+              <p>Shortlist</p>
+              <div
+                class="bar"
+                role="progressbar"
+                aria-label="Shortlist"
+                aria-valuenow="60"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <i data-p="60"></i>
+              </div>
+              <p>Pre-approval</p>
+              <div
+                class="bar"
+                role="progressbar"
+                aria-label="Pre-approval"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <i data-p="100"></i>
+              </div>
+              <p>Paperwork</p>
+              <div
+                class="bar"
+                role="progressbar"
+                aria-label="Paperwork"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <i data-p="25"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ===== View: Notifications ===== -->
+        <section class="view" id="v-notes" hidden>
+          <h2 tabindex="-1">Notifications</h2>
+          <div class="panel">
+            <ul class="feed" id="notes">
+              <li class="unread">
+                A new 3 bd house matching your search was listed in Austin.
+                <button class="link-btn dismiss">Dismiss</button>
+              </li>
+              <li class="unread">
+                The price of The Gables dropped by 3%.
+                <button class="link-btn dismiss">Dismiss</button>
+              </li>
+              <li class="unread">
+                Your viewing on Saturday is confirmed.
+                <button class="link-btn dismiss">Dismiss</button>
+              </li>
+            </ul>
+            <button class="btn btn-ghost sm" id="readall">Mark all as read</button>
+          </div>
+        </section>
+        <!-- ===== View: Help and support ===== -->
+        <section class="view" id="v-help" hidden>
+          <h2 tabindex="-1">Help and support</h2>
+          <div class="two">
+            <div class="panel">
+              <h3>Contact us</h3>
+              <p>
+                <strong>Phone</strong>
+                <br />
+                +1 (555) 010-0142
+              </p>
+              <p>
+                <strong>Email</strong>
+                <br />
+                hello@propertylistings.example
+              </p>
+              <p>
+                <strong>Hours</strong>
+                <br />
+                Mon to Sat, 9am to 7pm
+              </p>
+              <div class="faq" style="margin-top: 1rem">
+                <details>
+                  <summary>Can I change a viewing?</summary>
+                  <p>Yes. Request a new date and your agent will confirm.</p>
+                </details>
+                <details>
+                  <summary>Are saved homes private?</summary>
+                  <p>Only you and your agent can see them.</p>
+                </details>
+              </div>
+            </div>
+            <form
+              class="panel"
+              data-validate
+              data-ok="Thanks! We will call you back (demo only)."
+              novalidate
+            >
+              <h3>Request a callback</h3>
+              <div class="field">
+                <label for="cn">Your name</label>
+                <input id="cn" value="" data-v="name" data-label="Name" />
+                <p class="err" id="cn-err" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="ce">Email</label>
+                <input id="ce" value="" type="email" data-v="email" />
+                <p class="err" id="ce-err" role="alert"></p>
+              </div>
+              <button class="btn btn-primary" type="submit">Request callback</button>
+              <p class="form-ok" role="status" hidden></p>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!-- Scripts -->
+    <script src="js/validation.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

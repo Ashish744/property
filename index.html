@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Find homes for sale and rent | Property Listings</title>
+    <meta
+      name="description"
+      content="Verified homes for sale and rent, with local agents you can trust."
+    />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;600;700&display=swap"
+    />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  <body>
+    <!-- Loading screen (home page only) -->
+    <div id="loader" aria-hidden="true">
+      <img src="assets/logo/logo.webp" alt="" />
+      <div class="bento">
+        <div class="tile t1"></div>
+        <div class="tile t2"></div>
+        <div class="tile t3"></div>
+        <div class="tile t4"></div>
+        <div class="tile t5"></div>
+        <div class="tile t6"></div>
+        <div class="tile t7"></div>
+      </div>
+      <p>Find a place you will love.</p>
+    </div>
+    <!-- Navbar: built by js/main.js -->
+    <header id="site-nav"></header>
+    <!-- Page content -->
+    <main class="home-page">
+      <!-- ===== Section: Find a place you will love to call home. ===== -->
+      <section class="hero wrap home-hero">
+        <div>
+          <p class="eyebrow">A better way to find your place</p>
+          <h1 data-split>Good things start at home.</h1>
+          <p class="lead">
+            Find a space that fits the way you really live. Explore hand-picked homes and get
+            thoughtful help from the first search to the day you move in.
+          </p>
+          <form class="search" role="search" aria-label="Search homes">
+            <label class="sr" for="q">City or area</label>
+            <input id="q" name="q" placeholder="City, e.g. Austin" />
+            <label class="sr" for="ty">Property type</label>
+            <select id="ty" name="type">
+              <option value="">Any type</option>
+              <option>House</option>
+              <option>Apartment</option>
+              <option>Villa</option>
+            </select>
+            <label class="sr" for="dl">Buy or rent</label>
+            <select id="dl" name="deal">
+              <option value="">Buy or rent</option>
+              <option>Buy</option>
+              <option>Rent</option>
+            </select>
+            <button class="btn btn-primary" type="submit">Search</button>
+          </form>
+          <p id="search-out" role="status" style="margin-top: 0.8rem; font-weight: 700"></p>
+          <p class="hero-note"><span aria-hidden="true">✦</span> Real homes. Local insight. No pressure.</p>
+        </div>
+        <div class="hero-vis">
+          <div class="hero-img">
+            <img
+              src="assets/images/webp/photo-1777115470242-9b21d2c67729.webp"
+              alt="A modern two-storey house with clean lines and large windows"
+              data-fallback="assets/images/webp/placeholder.webp"
+            />
+          </div>
+          <div class="float f1">
+            <strong>New today</strong>
+            <br />
+            24 homes added
+          </div>
+          <div class="float f2">
+            <strong>Free valuation</strong>
+            <br />
+            Within 24 hours
+          </div>
+          <div class="bento-deco" aria-hidden="true">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </div>
+      </section>
+      <div class="marquee" aria-hidden="true">
+        <div class="track">
+          <span>Verified listings</span>
+          <span>Virtual tours</span>
+          <span>Free valuations</span>
+          <span>Local agents</span>
+          <span>Mortgage help</span>
+        </div>
+      </div>
+      <!-- ===== Section: stats ===== -->
+      <section class="stats">
+        <div class="wrap">
+          <div class="reveal">
+            <strong>
+              <span data-count="2400">0</span>
+              +
+            </strong>
+            Active listings
+          </div>
+          <div class="reveal">
+            <strong><span data-count="120">0</span></strong>
+            Local agents
+          </div>
+          <div class="reveal">
+            <strong><span data-count="35">0</span></strong>
+            Cities covered
+          </div>
+          <div class="reveal">
+            <strong>
+              <span data-count="98">0</span>
+              %
+            </strong>
+            Client satisfaction
+          </div>
+        </div>
+      </section>
+      <!-- ===== Section: Find your kind of somewhere ===== -->
+      <section class="wrap neighborhood-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">A good place to begin</p>
+            <h2 class="reveal">Find your kind of somewhere.</h2>
+          </div>
+          <a class="text-link" href="#listings">Explore all homes <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="neighborhood-grid">
+          <a class="neighborhood-card neighborhood-large" href="#listings">
+            <img
+              src="assets/images/webp/photo-1511818966892-d7d671e672a2.webp"
+              alt="City buildings in warm evening light"
+              loading="lazy"
+              data-fallback="assets/images/webp/placeholder.webp"
+            />
+            <span class="neighborhood-copy">
+              <span class="neighborhood-index">01 / THE CITY</span>
+              <strong>Close to everything.</strong>
+              <span>Find your pace in the heart of it all <span aria-hidden="true">↗</span></span>
+            </span>
+          </a>
+          <a class="neighborhood-card" href="#listings">
+            <img
+              src="assets/images/webp/photo-1449844908441-8829872d2607.webp"
+              alt="A welcoming home on a quiet tree-lined street"
+              loading="lazy"
+              data-fallback="assets/images/webp/placeholder.webp"
+            />
+            <span class="neighborhood-copy">
+              <span class="neighborhood-index">02 / ROOM TO GROW</span>
+              <strong>Make space for more.</strong>
+              <span>Room for the next chapter <span aria-hidden="true">↗</span></span>
+            </span>
+          </a>
+          <a class="neighborhood-card" href="#listings">
+            <img
+              src="assets/images/webp/photo-1449158743715-0a90ebb6d2d8.webp"
+              alt="A peaceful cottage surrounded by greenery"
+              loading="lazy"
+              data-fallback="assets/images/webp/placeholder.webp"
+            />
+            <span class="neighborhood-copy">
+              <span class="neighborhood-index">03 / A SLOWER PACE</span>
+              <strong>Find your breathing room.</strong>
+              <span>Trade busy days for open skies <span aria-hidden="true">↗</span></span>
+            </span>
+          </a>
+        </div>
+      </section>
+      <!-- ===== Section: Featured properties ===== -->
+      <section class="wrap home-listings" id="listings">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Worth a closer look</p>
+            <h2 class="reveal">Homes with a little something.</h2>
+            <p class="lead reveal">A few of our latest finds, chosen for the details that make them feel special.</p>
+          </div>
+          <span class="listing-note">NEW HOMES, EVERY DAY <span aria-hidden="true">✳</span></span>
+        </div>
+        <div class="filters" role="group" aria-label="Filter listings">
+          <button class="fbtn" data-f="all" aria-pressed="true">All</button>
+          <button class="fbtn" data-f="Buy" aria-pressed="false">Buy</button>
+          <button class="fbtn" data-f="Rent" aria-pressed="false">Rent</button>
+        </div>
+        <div class="props">
+          <article class="prop reveal" data-cat="Buy" data-type="House" data-city="Austin, TX">
+            <div class="pimg">
+              <img
+                src="assets/images/webp/photo-1600596542815-ffad4c1539a9.webp"
+                alt="A modern white family home under a blue sky"
+                loading="lazy"
+                data-fallback="assets/images/webp/placeholder.webp"
+              />
+              <span class="tag">For sale</span>
+              <button class="save" type="button" aria-pressed="false" aria-label="Save this home">
+                <span aria-hidden="true">♡</span>
+              </button>
+            </div>
+            <div class="pbody">
+              <div class="price">$785,000</div>
+              <h3>Modern Family Home</h3>
+              <p>Austin, TX</p>
+              <div class="pmeta">
+                <span>4 bd</span>
+                <span>3 ba</span>
+                <span>2,650 sqft</span>
+              </div>
+            </div>
+          </article>
+          <article class="prop reveal" data-cat="Buy" data-type="Villa" data-city="Miami, FL">
+            <div class="pimg">
+              <img
+                src="assets/images/webp/photo-1512917774080-9991f1c4c750.webp"
+                alt="A white and grey villa beside a swimming pool"
+                loading="lazy"
+                data-fallback="assets/images/webp/placeholder.webp"
+              />
+              <span class="tag">For sale</span>
+              <button class="save" type="button" aria-pressed="false" aria-label="Save this home">
+                <span aria-hidden="true">♡</span>
+              </button>
+            </div>
+            <div class="pbody">
+              <div class="price">$1,250,000</div>
+              <h3>Poolside Villa</h3>
+              <p>Miami, FL</p>
+              <div class="pmeta">
+                <span>5 bd</span>
+                <span>4 ba</span>
+                <span>3,900 sqft</span>
+              </div>
+            </div>
+          </article>
+          <article class="prop reveal" data-cat="Buy" data-type="House" data-city="Denver, CO">
+            <div class="pimg">
+              <img
+                src="assets/images/webp/photo-1494526585095-c41746248156.webp"
+                alt="A modern house with a lit doorway at dusk"
+                loading="lazy"
+                data-fallback="assets/images/webp/placeholder.webp"
+              />
+              <span class="tag">For sale</span>
+              <button class="save" type="button" aria-pressed="false" aria-label="Save this home">
+                <span aria-hidden="true">♡</span>
+              </button>
+            </div>
+            <div class="pbody">
+              <div class="price">$640,000</div>
+              <h3>Garage Residence at Dusk</h3>
+              <p>Denver, CO</p>
+              <div class="pmeta">
+                <span>3 bd</span>
+                <span>2 ba</span>
+                <span>2,100 sqft</span>
+              </div>
+            </div>
+          </article>
+          <article class="prop reveal" data-cat="Rent" data-type="House" data-city="Fort Myers, FL">
+            <div class="pimg">
+              <img
+                src="assets/images/webp/photo-1583608205776-bfd35f0d9f83.webp"
+                alt="A grey house with a stone chimney and porch"
+                loading="lazy"
+                data-fallback="assets/images/webp/placeholder.webp"
+              />
+              <span class="tag">For rent</span>
+              <button class="save" type="button" aria-pressed="false" aria-label="Save this home">
+                <span aria-hidden="true">♡</span>
+              </button>
+            </div>
+            <div class="pbody">
+              <div class="price">$4,200/mo</div>
+              <h3>Stone Chimney Cottage</h3>
+              <p>Fort Myers, FL</p>
+              <div class="pmeta">
+                <span>3 bd</span>
+                <span>2 ba</span>
+                <span>1,700 sqft</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="prop reveal"
+            data-cat="Rent"
+            data-type="Apartment"
+            data-city="Los Angeles, CA"
+          >
+            <div class="pimg">
+              <img
+                src="assets/images/webp/photo-1768609094528-18b8aaaad170.webp"
+                alt="A modern concrete residence with large windows and a palm tree"
+                loading="lazy"
+                data-fallback="assets/images/webp/placeholder.webp"
+              />
+              <span class="tag">For rent</span>
+              <button class="save" type="button" aria-pressed="false" aria-label="Save this home">
+                <span aria-hidden="true">♡</span>
+              </button>
+            </div>
+            <div class="pbody">
+              <div class="price">$5,800/mo</div>
+              <h3>Palm Court Residence</h3>
+              <p>Los Angeles, CA</p>
+              <div class="pmeta">
+                <span>2 bd</span>
+                <span>2 ba</span>
+                <span>1,450 sqft</span>
+              </div>
+            </div>
+          </article>
+          <article class="prop reveal" data-cat="Buy" data-type="Apartment" data-city="Chicago, IL">
+            <div class="pimg">
+              <img
+                src="assets/images/webp/photo-1580587771525-78b9dba3b914.webp"
+                alt="A white and brown concrete apartment building"
+                loading="lazy"
+                data-fallback="assets/images/webp/placeholder.webp"
+              />
+              <span class="tag">For sale</span>
+              <button class="save" type="button" aria-pressed="false" aria-label="Save this home">
+                <span aria-hidden="true">♡</span>
+              </button>
+            </div>
+            <div class="pbody">
+              <div class="price">$520,000</div>
+              <h3>Brownstone Terrace</h3>
+              <p>Chicago, IL</p>
+              <div class="pmeta">
+                <span>2 bd</span>
+                <span>2 ba</span>
+                <span>1,250 sqft</span>
+              </div>
+            </div>
+          </article>
+            <article class="prop reveal" data-cat="Buy" data-type="Apartment" data-city="Chicago, IL">
+            <div class="pimg">
+              <img
+                src="assets/images/webp/photo-1580587771525-78b9dba3b914.webp"
+                alt="A white and brown concrete apartment building"
+                loading="lazy"
+                data-fallback="assets/images/webp/placeholder.webp"
+              />
+              <span class="tag">For sale</span>
+              <button class="save" type="button" aria-pressed="false" aria-label="Save this home">
+                <span aria-hidden="true">♡</span>
+              </button>
+            </div>
+            <div class="pbody">
+              <div class="price">$547,000</div>
+              <h3>Harbor Terrace</h3>
+              <p>Chicago, IL</p>
+              <div class="pmeta">
+                <span>2 bd</span>
+                <span>2 ba</span>
+                <span>1,324 sqft</span>
+              </div>
+            </div>
+          </article>
+            <article class="prop reveal" data-cat="Buy" data-type="Apartment" data-city="Chicago, IL">
+            <div class="pimg">
+              <img
+                src="assets/images/webp/photo-1580587771525-78b9dba3b914.webp"
+                alt="A white and brown concrete apartment building"
+                loading="lazy"
+                data-fallback="assets/images/webp/placeholder.webp"
+              />
+              <span class="tag">For sale</span>
+              <button class="save" type="button" aria-pressed="false" aria-label="Save this home">
+                <span aria-hidden="true">♡</span>
+              </button>
+            </div>
+            <div class="pbody">
+              <div class="price">$5,000</div>
+              <h3>harvadorae Terrace</h3>
+              <p>Chicago, IL</p>
+              <div class="pmeta">
+                <span>2 bd</span>
+                <span>7 ba</span>
+                <span>1,220 sqft</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- ===== Section: Agents who know the street ===== -->
+      <section class="wrap split">
+        <div class="ph mask">
+          <img
+            src="assets/images/webp/photo-1583847268964-b28dc8f51f92.webp"
+            alt="A bright living room with furniture and a large window"
+            loading="lazy"
+            data-fallback="assets/images/webp/placeholder.webp"
+          />
+        </div>
+        <div>
+          <h2 class="reveal">Agents who know the street</h2>
+          <p class="reveal">
+            Every listing is visited in person by a local agent, so the photos, the price and the
+            neighbourhood all match what you see.
+          </p>
+          <ul class="reveal">
+            <li>Every listing verified in person</li>
+            <li>Free valuation within 24 hours</li>
+            <li>Clear, fixed agent fees</li>
+          </ul>
+        </div>
+      </section>
+      <!-- ===== Section: Thinking about selling? ===== -->
+      <section class="wrap seller-feature">
+        <div class="seller-image">
+          <img
+            src="assets/images/webp/photo-1600210492486-724fe5c67fb0.webp"
+            alt="A thoughtfully styled living room ready for its next owner"
+            loading="lazy"
+            data-fallback="assets/images/webp/placeholder.webp"
+          />
+          <span class="seller-stamp">YOUR NEXT<br />CHAPTER</span>
+        </div>
+        <div class="seller-copy">
+          <p class="eyebrow">For the next chapter</p>
+          <h2>Ready to make a move?</h2>
+          <p>
+            Start with a clear picture of what your home could be worth. Get a personal valuation,
+            practical advice, and a plan that works for you.
+          </p>
+          <a class="btn btn-primary" href="contact.html">Get a free valuation <span aria-hidden="true">↗</span></a>
+          <span class="seller-footnote">No pressure. Just a helpful conversation.</span>
+        </div>
+      </section>
+      <!-- ===== Section: From search to keys in four steps ===== -->
+      <section class="wrap story">
+        <div class="story-head">
+          <p class="eyebrow">How it works</p>
+          <h2 class="reveal">From search to keys in four steps</h2>
+          <p class="lead reveal">A clear path, with a real person beside you.</p>
+        </div>
+        <div class="tl">
+          <div class="tl-line"><i></i></div>
+          <div class="step">
+            <span class="dot"></span>
+            <h3>1. Search and save</h3>
+            <p>Filter by city, type and budget, then save the homes you like.</p>
+          </div>
+          <div class="step">
+            <span class="dot"></span>
+            <h3>2. Book a viewing</h3>
+            <p>Pick a time online. An agent meets you at the door.</p>
+          </div>
+          <div class="step">
+            <span class="dot"></span>
+            <h3>3. Make an offer</h3>
+            <p>We explain the numbers and negotiate on your behalf.</p>
+          </div>
+          <div class="step">
+            <span class="dot"></span>
+            <h3>4. Get your keys</h3>
+            <p>We guide you through paperwork until move-in day.</p>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Section: Browse by lifestyle ===== -->
+      <section class="wrap">
+        <h2 class="reveal">Browse by lifestyle</h2>
+        <p class="lead reveal">Hover, tap or press Enter on a card to see what it includes.</p>
+        <div class="flips">
+          <div
+            class="flip"
+            tabindex="0"
+            role="button"
+            aria-pressed="false"
+            aria-label="Family homes. Press to flip."
+          >
+            <div class="flip-in">
+              <div class="face front">
+                <img
+                  src="assets/images/webp/photo-1480074568708-e7b720bb3f09.webp"
+                  alt="A white house under maple trees"
+                  loading="lazy"
+                  data-fallback="assets/images/webp/placeholder.webp"
+                />
+                <h3>Family homes</h3>
+              </div>
+              <div class="face back">
+                <h3>Family homes</h3>
+                <p>Space, good schools and quiet streets.</p>
+                <a class="btn btn-ghost" href="contact.html">Ask an agent</a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flip"
+            tabindex="0"
+            role="button"
+            aria-pressed="false"
+            aria-label="City apartments. Press to flip."
+          >
+            <div class="flip-in">
+              <div class="face front">
+                <img
+                  src="assets/images/webp/photo-1511452885600-a3d2c9148a31.webp"
+                  alt="A white and black apartment building"
+                  loading="lazy"
+                  data-fallback="assets/images/webp/placeholder.webp"
+                />
+                <h3>City apartments</h3>
+              </div>
+              <div class="face back">
+                <h3>City apartments</h3>
+                <p>Walkable neighbourhoods close to work.</p>
+                <a class="btn btn-ghost" href="contact.html">Ask an agent</a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flip"
+            tabindex="0"
+            role="button"
+            aria-pressed="false"
+            aria-label="Investment. Press to flip."
+          >
+            <div class="flip-in">
+              <div class="face front">
+                <img
+                  src="assets/images/webp/photo-1724304406928-c43b01912fa1.webp"
+                  alt="A key, house model and calculator"
+                  loading="lazy"
+                  data-fallback="assets/images/webp/placeholder.webp"
+                />
+                <h3>Investment</h3>
+              </div>
+              <div class="face back">
+                <h3>Investment</h3>
+                <p>Yield, growth and honest numbers.</p>
+                <a class="btn btn-ghost" href="contact.html">Ask an agent</a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flip"
+            tabindex="0"
+            role="button"
+            aria-pressed="false"
+            aria-label="Countryside. Press to flip."
+          >
+            <div class="flip-in">
+              <div class="face front">
+                <img
+                  src="assets/images/webp/photo-1760971129480-ebe47b9821d5.webp"
+                  alt="Open doors revealing green rolling hills"
+                  loading="lazy"
+                  data-fallback="assets/images/webp/placeholder.webp"
+                />
+                <h3>Countryside</h3>
+              </div>
+              <div class="face back">
+                <h3>Countryside</h3>
+                <p>Open views and room to breathe.</p>
+                <a class="btn btn-ghost" href="contact.html">Ask an agent</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Section: What our clients say ===== -->
+      <section class="wrap">
+        <h2 class="reveal">What our clients say</h2>
+        <div class="tgrid">
+          <article class="tcard">
+            <p><strong>“I found my flat in two weekends.”</strong></p>
+            <div class="mw">
+              <div>
+                <p style="margin-top: 0.6rem">
+                  My agent explained every step, found three great options, and negotiated a better
+                  price than I expected.
+                </p>
+              </div>
+            </div>
+            <button class="link-btn" aria-expanded="false" data-tmore>Read more</button>
+            <div class="who">
+              <span class="tav" aria-hidden="true">RK</span>
+              <div>
+                <strong>Rahul K.</strong>
+                <br />
+                First-time buyer
+              </div>
+            </div>
+          </article>
+          <article class="tcard">
+            <p><strong>“My rental was let in nine days.”</strong></p>
+            <div class="mw">
+              <div>
+                <p style="margin-top: 0.6rem">
+                  Professional photos and a virtual tour brought serious tenants quickly. Rent
+                  arrives on time every month.
+                </p>
+              </div>
+            </div>
+            <button class="link-btn" aria-expanded="false" data-tmore>Read more</button>
+            <div class="who">
+              <span class="tav" aria-hidden="true">JL</span>
+              <div>
+                <strong>Jenna L.</strong>
+                <br />
+                Landlord
+              </div>
+            </div>
+          </article>
+          <article class="tcard">
+            <p><strong>“A smooth, stress-free sale.”</strong></p>
+            <div class="mw">
+              <div>
+                <p style="margin-top: 0.6rem">
+                  The free valuation was spot on. Viewings were well organised, and I always knew
+                  what happened next.
+                </p>
+              </div>
+            </div>
+            <button class="link-btn" aria-expanded="false" data-tmore>Read more</button>
+            <div class="who">
+              <span class="tav" aria-hidden="true">MP</span>
+              <div>
+                <strong>Marco P.</strong>
+                <br />
+                Seller
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- ===== Section: Ready to find your next home? ===== -->
+      <section class="wrap">
+        <div class="cta reveal">
+          <div>
+            <h2>Ready to find your next home?</h2>
+            <p>Book a free viewing or valuation. Our agents reply within one working day.</p>
+            <div class="btns" style="margin-top: 1.2rem">
+              <a class="btn btn-primary" href="contact.html">Talk to an agent</a>
+            </div>
+          </div>
+          <address>
+            <strong>Call</strong>
+            +1 (555) 010-0142
+            <strong>Email</strong>
+            hello@propertylistings.example
+            <strong>Hours</strong>
+            Mon to Sat, 9am to 7pm
+          </address>
+        </div>
+      </section>
+    </main>
+    <!-- Footer: built by js/main.js -->
+    <footer id="site-foot"></footer>
+    <!-- Scripts: libraries first, then site code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+  </body>
+</html>
